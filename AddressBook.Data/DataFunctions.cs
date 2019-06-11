@@ -11,19 +11,8 @@ namespace AddressBook.Data
     public static class DataFunctions
     {
         private static string _usersFilePath = @"E:\G02\Users.dat"; //We save all User credentials here
-        private static string _contactsFilePath = @"E:\G02\Contacts.dat"; // We save all Contacts here
-        private static List<User> Users { get; set; }
-        private static List<Contact> Contacts { get; set; }
-
-        //This function ensures that file path Directory exists and creates it in case it doesn't
-        private static void EnsureDirectory(string path)
-        {
-            string directoryPath = Path.GetDirectoryName(path);
-            if (!Directory.Exists(directoryPath))
-            {
-                Directory.CreateDirectory(directoryPath);
-            }
-        }
+        private static List<User> Users = new List<User>();
+        public static int nextID=0;
 
         //This functions transfers information from Dat file to users List
         public static void LoadUserData()
@@ -52,135 +41,109 @@ namespace AddressBook.Data
         //This function transfers data from Users list to Dat file
         public static void SaveUserData()
         {
-            EnsureDirectory(_usersFilePath);
             using (BinaryWriter binaryWriter = new BinaryWriter(File.Open(_usersFilePath, FileMode.Create)))
             {
-                foreach (User user in Users)
+                for (int i= 0; i<Users.Count;i++)
                 {
-                    int latestID = FindNextID();
-                    binaryWriter.Write(latestID);
-                    binaryWriter.Write(user.FirstName);
-                    binaryWriter.Write(user.LastName);
-                    binaryWriter.Write(user.Username);
-                    binaryWriter.Write(user.Password);
-                    binaryWriter.Write(user.Email);
+                    binaryWriter.Write(i);
+                    binaryWriter.Write(Users[i].FirstName);
+                    binaryWriter.Write(Users[i].LastName);
+                    binaryWriter.Write(Users[i].Username);
+                    binaryWriter.Write(Users[i].Password);
+                    binaryWriter.Write(Users[i].Email);
+                    nextID = i + 1;
                 }
             }
         }
 
-
-        public static string[] FindByEmail(string email)
+        public static void AddUser(User user)
         {
-            using (BinaryReader binaryReader = new BinaryReader(File.Open(_usersFilePath, FileMode.Open)))
+            if (user.Email == user.Username) throw new Exception("Username and email must be different");
+            LoadUserData();
+            foreach (User u in Users)
             {
-                while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
+                if (u.ID == user.ID || u.Username == user.Username || u.Email == user.Email)
                 {
-                    binaryReader.ReadInt32();
-                    string firstName = binaryReader.ReadString();
-                    string lastName = binaryReader.ReadString();
-                    string username = binaryReader.ReadString();
-                    string password = binaryReader.ReadString();
-                    if (email == binaryReader.ReadString())
-                    {
-                        string[] result = new string[] { $"{firstName} {lastName}", username, password };
-                        return result;
-                    }
+                    throw new Exception("Such user already exists.");
                 }
-                string[] tufta = new string[0];
-                return tufta;
             }
+            Users.Add(user);
+            SaveUserData();
         }
 
-        public static string ReturnFullName(string username)
+        //public static void EditUser(User user)
+        //{
+        //    for (int i = 0; i < Users.Count; i++)
+        //    {
+        //        if (Users[i].ID == user.ID)
+        //        {
+        //            Users[i] = user;
+        //            SaveUserData();
+        //            return;
+        //        }
+        //    }
+        //    throw new Exception("Such user doesn't exist.");
+        //}
+
+        //public static void DeleteUser(User user)
+        //{
+        //    DeleteUser(user.ID);
+        //}
+
+        //public static void DeleteUser(int id)
+        //{
+        //    for (int i = 0; i < Users.Count; i++)
+        //    {
+        //        if (Users[i].ID == id)
+        //        {
+        //            Users.RemoveAt(i);
+        //            SaveUserData();
+        //            return;
+        //        }
+        //    }
+        //}
+        //This function finds user based on username or email
+
+        public static User FindUser(string usernameORemail)
         {
-            using (BinaryReader binaryReader = new BinaryReader(File.Open(_usersFilePath, FileMode.Open)))
+            LoadUserData();
+            foreach (User u in Users)
             {
-                while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
-                {
-                    binaryReader.ReadInt32();
-                    string Firstname = binaryReader.ReadString();
-                    string Lastname = binaryReader.ReadString();
-                    if (username == binaryReader.ReadString()) return Firstname + " " + Lastname;
-                    binaryReader.ReadString();
-                    binaryReader.ReadString();
-                }
-                return "For some reason, we couldn't find you name";
+                if (u.Email == usernameORemail || u.Username == usernameORemail) return u;
             }
+            throw new Exception("Such user doesn't exist.");
         }
-        //This function reads through Users database and returns true if given user exists
+
+        //This function reads through Users database and returns true if user exists
         public static bool CheckCredentials(string username, string password)
         {
-            using (BinaryReader binaryReader = new BinaryReader(File.Open(_usersFilePath, FileMode.Open)))
+            LoadUserData();
+            foreach (User u in Users)
             {
-                while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
-                {
-                    bool username_check = false, password_check = false;
-                    binaryReader.ReadInt32();
-                    binaryReader.ReadString();
-                    binaryReader.ReadString();
-                    if (username == binaryReader.ReadString()) username_check = true; 
-                    if (password == binaryReader.ReadString()) password_check = true;
-                    binaryReader.ReadString();
-                    if (username_check && password_check) return true;
-                }
-                return false;
-            }
-        }
-
-        //This function returns the next ID that you should use for adding a user
-        public static int FindNextID()
-        {
-            int ID = 0;
-            foreach (User user in Users)
-            {
-                ID = user.ID + 1;
-            }
-            return ID;
-        }
-        //This function checks if given username and email are already in database
-        public static bool IsUnique(string username, string email)
-        {
-            if (File.Exists(_usersFilePath))
-            {
-                using (BinaryReader binaryReader = new BinaryReader(File.Open(_usersFilePath, FileMode.Open)))
-                {
-                    while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
-                    {
-                        binaryReader.ReadInt32();
-                        binaryReader.ReadString();
-                        binaryReader.ReadString();
-                        if (username == binaryReader.ReadString()) return false;
-                        binaryReader.ReadString();
-                        if (email == binaryReader.ReadString()) return false;
-                    }
-                    return true;
-                }
+                if (u.Username == username && u.Password == password) return true;
             }
             return false;
         }
 
-        //This function writes user info at the end of the text
-        public static void Write(User user)
+        //This function checks if username and email are unique and returns True if so
+        public static bool IsUnique(string username, string email)
         {
-            int latestID = FindNextID();
-            using (BinaryWriter binaryWriter = new BinaryWriter(File.Open(_usersFilePath, FileMode.Append)))
+            LoadUserData();
+            foreach (User u in Users)
             {
-                binaryWriter.Write(latestID);
-                binaryWriter.Write(user.FirstName);
-                binaryWriter.Write(user.LastName);
-                binaryWriter.Write(user.Username);
-                binaryWriter.Write(user.Password);
-                binaryWriter.Write(user.Email);
+                if (u.Username == username || u.Email == email) return false;
             }
+            return true;
         }
         
-        //Functions for testing and troubleshooting
+
+        //Functions for testing and troubleshooting. This function translate DAT file into a simple Txt one
         public static void Test()
         {
-            int a =0; string b = "", c = "", d = "", e = "", f = "";
+            int a = 0; string b = "", c = "", d = "", e = "", f = "";
             using (BinaryReader binaryReader = new BinaryReader(File.Open(_usersFilePath, FileMode.Open)))
             {
-                using (StreamWriter streamWriter = new StreamWriter(File.Open(@"E:\Test.txt", FileMode.Create)))
+                using (StreamWriter streamWriter = new StreamWriter(File.Open(@"E:\G02\Test.txt", FileMode.Create)))
                 {
                     while (binaryReader.BaseStream.Position < binaryReader.BaseStream.Length)
                     {
@@ -198,10 +161,10 @@ namespace AddressBook.Data
                         streamWriter.Write(d);
                         streamWriter.Write(e);
                         streamWriter.Write(f);
-                    }   
+                    }
                 }
             }
-          
+
         }
 
     }

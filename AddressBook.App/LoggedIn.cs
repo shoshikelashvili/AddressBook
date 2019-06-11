@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AddressBook.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -17,10 +18,11 @@ namespace AddressBook.App
             InitializeComponent();
         }
 
-        private void LoggedIn_Load(object sender, EventArgs e)
-        {
-            WelcomeScreen.Text = $"Hello {Data.DataFunctions.ReturnFullName(MainForm.LoggedinUsername)}, we're happy to see you!"; 
-        }
+        //private void LoggedIn_Load(object sender, EventArgs e)
+        //{
+        //    DataFunctions function = new DataFunctions();
+        //    WelcomeScreen.Text = $"Hello {(function.FindUser(MainForm.LoggedinUsername)).FirstName}, we're happy to see you!"; 
+        //}
 
       
     }

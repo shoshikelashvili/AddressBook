@@ -48,7 +48,7 @@
             this.Controls.Add(this.WelcomeScreen);
             this.Name = "LoggedIn";
             this.Text = "LoggedIn";
-            this.Load += new System.EventHandler(this.LoggedIn_Load);
+            //this.Load += new System.EventHandler(this.LoggedIn_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

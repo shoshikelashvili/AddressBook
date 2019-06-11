@@ -42,20 +42,23 @@ namespace AddressBook.App
             if (FieldsFilled() && DataFunctions.IsUnique(UserNameText.Text,EmailText.Text))
             {
                 Domain.User user = CoreFunctions.CreateUser(FirstNameText.Text,LastNameText.Text,UserNameText.Text,PasswordText.Text,EmailText.Text);
-                DataFunctions.Write(user);
+                DataFunctions.AddUser(user);
                 DialogResult result = MessageBox.Show($"Registration successful!\nGoing back to login page", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
                 BackToLogin(sender, e);
             }
             else if(!FieldsFilled())
             {
                 DialogResult result = MessageBox.Show($"Please fill all the fields!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-                DataFunctions.Test();
             }
             else
             {
                 DialogResult result = MessageBox.Show($"User with said Username or Email already exists!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
             }
         }
-      
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            Data.DataFunctions.Test();
+        }
     }
 }

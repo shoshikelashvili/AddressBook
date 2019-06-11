@@ -1,4 +1,6 @@
-﻿using System;
+﻿using AddressBook.Data;
+using AddressBook.Domain;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -25,20 +27,13 @@ namespace AddressBook.App
             this.Close();
         }
 
-        public void SendMail(object sender, EventArgs e)
-        {
-            string[] data = new string[3];
-            data = Data.DataFunctions.FindByEmail(textBox1.Text);
-            if (data.Length == 0)
-            {
-                DialogResult result = MessageBox.Show($"User with such email doesn't exist!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
-            }
-            else
-            {
-                Core.CoreFunctions.send_Email($"Hello there {data[0]}, your username is {data[1]} and your password is {data[2]}", textBox1.Text);
-                DialogResult result = MessageBox.Show($"Message sent succesfully! Please check your email", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-            }
-        }
+        //public void SendMail(object sender, EventArgs e)
+        //{
+        //    DataFunctions function = new DataFunctions();
+        //    User user = function.FindUser(textBox1.Text);
+        //        Core.CoreFunctions.send_Email($"Hello there {user.FirstName + " " + user.LastName}, your username is {user.Username} and your password is {user.Password}", textBox1.Text);
+        //        DialogResult result = MessageBox.Show($"Message sent succesfully! Please check your email", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+        //}
 
     }
 }

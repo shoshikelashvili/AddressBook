@@ -40,6 +40,7 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.EmailText = new System.Windows.Forms.TextBox();
             this.GoBack = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // button1
@@ -142,11 +143,22 @@
             this.GoBack.UseVisualStyleBackColor = true;
             this.GoBack.Click += new System.EventHandler(this.BackToLogin);
             // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(479, 365);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(75, 23);
+            this.button2.TabIndex = 12;
+            this.button2.Text = "Debug";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 412);
+            this.Controls.Add(this.button2);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.EmailText);
             this.Controls.Add(this.EmailLabel);
@@ -180,5 +192,6 @@
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.TextBox EmailText;
         private System.Windows.Forms.Button GoBack;
+        private System.Windows.Forms.Button button2;
     }
 }

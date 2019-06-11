@@ -42,7 +42,7 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Send E-mail";
             this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.SendMail);
+            //this.button1.Click += new System.EventHandler(this.SendMail);
             // 
             // textBox1
             // 

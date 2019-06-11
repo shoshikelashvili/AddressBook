@@ -7,3 +7,12 @@ C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_L
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.csproj.CopyComplete
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.dll
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\bin\Debug\AddressBook.Data.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\bin\Debug\AddressBook.Data.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\bin\Debug\AddressBook.Domain.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\bin\Debug\AddressBook.Domain.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.csprojAssemblyReference.cache
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.csproj.CoreCompileInputs.cache
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.csproj.CopyComplete
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Data\obj\Debug\AddressBook.Data.pdb

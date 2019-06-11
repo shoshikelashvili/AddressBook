@@ -18,3 +18,23 @@ C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_L
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.csproj.CopyComplete
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.exe
 C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.csprojAssemblyReference.cache
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.ForgotPass.resources
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.LoggedIn.resources
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.MainForm.resources
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.Properties.Resources.resources
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.RegisterForm.resources
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.csproj.GenerateResource.cache
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.csproj.CoreCompileInputs.cache
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.exe
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.App.exe.config
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.App.exe
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.App.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Core.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Data.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Domain.dll
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Core.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Data.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\bin\Debug\AddressBook.Domain.pdb
+C:\Users\tyker\Desktop\Dvali Project Revised\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.App\obj\Debug\AddressBook.App.csproj.CopyComplete

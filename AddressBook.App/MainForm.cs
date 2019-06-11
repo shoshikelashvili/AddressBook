@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AddressBook.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -60,26 +61,27 @@ namespace AddressBook.App {
             this.Close();
         }
 
-        public void LogInClick(object sender, EventArgs e)
-        {
-            if (string.IsNullOrWhiteSpace(PasswordInput.Text) || PasswordInput.Text == "Password" || string.IsNullOrWhiteSpace(UsernameInput.Text) ||UsernameInput.Text == "Username")
-            {
-                DialogResult result = MessageBox.Show($"Please fill all the fields!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-            }
-            else if(Data.DataFunctions.CheckCredentials(UsernameInput.Text, PasswordInput.Text))
-            {
-                DialogResult result = MessageBox.Show($"Log in Succesfull!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-                LoggedinUsername = UsernameInput.Text;
-                this.Hide();
-                LoggedIn loggedInForm = new LoggedIn();
-                loggedInForm.ShowDialog();
-                this.Close();
-            }
-            else
-            {
-                DialogResult result = MessageBox.Show($"User with such username and password doesn't exist!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
-            }
-        }
+        //public void LogInClick(object sender, EventArgs e)
+        //{
+        //    DataFunctions functions = new DataFunctions();
+        //    if (string.IsNullOrWhiteSpace(PasswordInput.Text) || PasswordInput.Text == "Password" || string.IsNullOrWhiteSpace(UsernameInput.Text) ||UsernameInput.Text == "Username")
+        //    {
+        //        DialogResult result = MessageBox.Show($"Please fill all the fields!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+        //    }
+        //    else if(functions.CheckCredentials(UsernameInput.Text, PasswordInput.Text))
+        //    {
+        //        DialogResult result = MessageBox.Show($"Log in Succesfull!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+        //        LoggedinUsername = UsernameInput.Text;
+        //        this.Hide();
+        //        LoggedIn loggedInForm = new LoggedIn();
+        //        loggedInForm.ShowDialog();
+        //        this.Close();
+        //    }
+        //    else
+        //    {
+        //        DialogResult result = MessageBox.Show($"User with such username and password doesn't exist!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+        //    }
+        //}
          
         public void ForgotPassClick(object sender, EventArgs e)
         {
