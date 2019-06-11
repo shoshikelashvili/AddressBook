@@ -1,0 +1,11 @@
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Core.dll
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Core.pdb
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Data.dll
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Domain.dll
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Data.pdb
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\bin\Debug\AddressBook.Domain.pdb
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\obj\Debug\AddressBook.Core.csprojAssemblyReference.cache
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\obj\Debug\AddressBook.Core.csproj.CoreCompileInputs.cache
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\obj\Debug\AddressBook.Core.csproj.CopyComplete
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\obj\Debug\AddressBook.Core.dll
+C:\Users\John\Downloads\Dvali Project\G02_AddressBook\G02_AddressBook_Register_Login\AddressBook.Core\obj\Debug\AddressBook.Core.pdb
