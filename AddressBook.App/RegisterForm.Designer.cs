@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.LastNameText = new System.Windows.Forms.TextBox();
             this.UserNameText = new System.Windows.Forms.TextBox();
             this.PasswordText = new System.Windows.Forms.TextBox();
@@ -40,46 +40,48 @@
             this.EmailLabel = new System.Windows.Forms.Label();
             this.EmailText = new System.Windows.Forms.TextBox();
             this.GoBack = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.DebugButton = new System.Windows.Forms.Button();
+            this.IDtext = new System.Windows.Forms.TextBox();
+            this.ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
-            // button1
+            // RegisterButton
             // 
-            this.button1.Location = new System.Drawing.Point(225, 239);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(100, 28);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Register";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.RegisterClick);
+            this.RegisterButton.Location = new System.Drawing.Point(225, 239);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(100, 28);
+            this.RegisterButton.TabIndex = 6;
+            this.RegisterButton.Text = "Register";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterClick);
             // 
             // LastNameText
             // 
             this.LastNameText.Location = new System.Drawing.Point(225, 84);
             this.LastNameText.Name = "LastNameText";
             this.LastNameText.Size = new System.Drawing.Size(100, 20);
-            this.LastNameText.TabIndex = 1;
+            this.LastNameText.TabIndex = 2;
             // 
             // UserNameText
             // 
             this.UserNameText.Location = new System.Drawing.Point(225, 121);
             this.UserNameText.Name = "UserNameText";
             this.UserNameText.Size = new System.Drawing.Size(100, 20);
-            this.UserNameText.TabIndex = 2;
+            this.UserNameText.TabIndex = 3;
             // 
             // PasswordText
             // 
             this.PasswordText.Location = new System.Drawing.Point(225, 158);
             this.PasswordText.Name = "PasswordText";
             this.PasswordText.Size = new System.Drawing.Size(100, 20);
-            this.PasswordText.TabIndex = 3;
+            this.PasswordText.TabIndex = 4;
             // 
             // FirstNameText
             // 
             this.FirstNameText.Location = new System.Drawing.Point(225, 47);
             this.FirstNameText.Name = "FirstNameText";
             this.FirstNameText.Size = new System.Drawing.Size(100, 20);
-            this.FirstNameText.TabIndex = 4;
+            this.FirstNameText.TabIndex = 1;
             // 
             // FirstNameLabel
             // 
@@ -131,7 +133,7 @@
             this.EmailText.Location = new System.Drawing.Point(225, 198);
             this.EmailText.Name = "EmailText";
             this.EmailText.Size = new System.Drawing.Size(100, 20);
-            this.EmailText.TabIndex = 10;
+            this.EmailText.TabIndex = 5;
             // 
             // GoBack
             // 
@@ -143,22 +145,40 @@
             this.GoBack.UseVisualStyleBackColor = true;
             this.GoBack.Click += new System.EventHandler(this.BackToLogin);
             // 
-            // button2
+            // DebugButton
             // 
-            this.button2.Location = new System.Drawing.Point(479, 365);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Debug";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.DebugButton.Location = new System.Drawing.Point(479, 365);
+            this.DebugButton.Name = "DebugButton";
+            this.DebugButton.Size = new System.Drawing.Size(75, 23);
+            this.DebugButton.TabIndex = 12;
+            this.DebugButton.Text = "Debug";
+            this.DebugButton.UseVisualStyleBackColor = true;
+            this.DebugButton.Click += new System.EventHandler(this.DebugButton_Click);
+            // 
+            // IDtext
+            // 
+            this.IDtext.Location = new System.Drawing.Point(225, 13);
+            this.IDtext.Name = "IDtext";
+            this.IDtext.Size = new System.Drawing.Size(100, 20);
+            this.IDtext.TabIndex = 0;
+            // 
+            // ID
+            // 
+            this.ID.AutoSize = true;
+            this.ID.Location = new System.Drawing.Point(179, 16);
+            this.ID.Name = "ID";
+            this.ID.Size = new System.Drawing.Size(18, 13);
+            this.ID.TabIndex = 14;
+            this.ID.Text = "ID";
             // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 412);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.ID);
+            this.Controls.Add(this.IDtext);
+            this.Controls.Add(this.DebugButton);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.EmailText);
             this.Controls.Add(this.EmailLabel);
@@ -170,8 +190,9 @@
             this.Controls.Add(this.PasswordText);
             this.Controls.Add(this.UserNameText);
             this.Controls.Add(this.LastNameText);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegisterButton);
             this.Name = "RegisterForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "RegisterForm";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -180,7 +201,7 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.TextBox LastNameText;
         private System.Windows.Forms.TextBox UserNameText;
         private System.Windows.Forms.TextBox PasswordText;
@@ -192,6 +213,8 @@
         private System.Windows.Forms.Label EmailLabel;
         private System.Windows.Forms.TextBox EmailText;
         private System.Windows.Forms.Button GoBack;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button DebugButton;
+        private System.Windows.Forms.TextBox IDtext;
+        private System.Windows.Forms.Label ID;
     }
 }

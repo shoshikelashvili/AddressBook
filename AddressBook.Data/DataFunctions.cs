@@ -12,7 +12,6 @@ namespace AddressBook.Data
     {
         private static string _usersFilePath = @"E:\G02\Users.dat"; //We save all User credentials here
         private static List<User> Users = new List<User>();
-        public static int nextID=0;
 
         //This functions transfers information from Dat file to users List
         public static void LoadUserData()
@@ -45,13 +44,12 @@ namespace AddressBook.Data
             {
                 for (int i= 0; i<Users.Count;i++)
                 {
-                    binaryWriter.Write(i);
+                    binaryWriter.Write(Users[i].ID);
                     binaryWriter.Write(Users[i].FirstName);
                     binaryWriter.Write(Users[i].LastName);
                     binaryWriter.Write(Users[i].Username);
                     binaryWriter.Write(Users[i].Password);
                     binaryWriter.Write(Users[i].Email);
-                    nextID = i + 1;
                 }
             }
         }
@@ -59,7 +57,6 @@ namespace AddressBook.Data
         public static void AddUser(User user)
         {
             if (user.Email == user.Username) throw new Exception("Username and email must be different");
-            LoadUserData();
             foreach (User u in Users)
             {
                 if (u.ID == user.ID || u.Username == user.Username || u.Email == user.Email)
@@ -71,37 +68,39 @@ namespace AddressBook.Data
             SaveUserData();
         }
 
-        //public static void EditUser(User user)
-        //{
-        //    for (int i = 0; i < Users.Count; i++)
-        //    {
-        //        if (Users[i].ID == user.ID)
-        //        {
-        //            Users[i] = user;
-        //            SaveUserData();
-        //            return;
-        //        }
-        //    }
-        //    throw new Exception("Such user doesn't exist.");
-        //}
+        public static void EditUser(User user)
+        {
+            LoadUserData();
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (Users[i].ID == user.ID)
+                {
+                    Users[i] = user;
+                    SaveUserData();
+                    return;
+                }
+            }
+            throw new Exception("Such user doesn't exist.");
+        }
 
-        //public static void DeleteUser(User user)
-        //{
-        //    DeleteUser(user.ID);
-        //}
+        public static void DeleteUser(User user)
+        {
+            DeleteUser(user.ID);
+        }
 
-        //public static void DeleteUser(int id)
-        //{
-        //    for (int i = 0; i < Users.Count; i++)
-        //    {
-        //        if (Users[i].ID == id)
-        //        {
-        //            Users.RemoveAt(i);
-        //            SaveUserData();
-        //            return;
-        //        }
-        //    }
-        //}
+        public static void DeleteUser(int id)
+        {
+            LoadUserData();
+            for (int i = 0; i < Users.Count; i++)
+            {
+                if (Users[i].ID == id)
+                {
+                    Users.RemoveAt(i);
+                    SaveUserData();
+                    return;
+                }
+            }
+        }
         //This function finds user based on username or email
 
         public static User FindUser(string usernameORemail)

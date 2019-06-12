@@ -18,12 +18,18 @@ namespace AddressBook.App
             InitializeComponent();
         }
 
-        //private void LoggedIn_Load(object sender, EventArgs e)
-        //{
-        //    DataFunctions function = new DataFunctions();
-        //    WelcomeScreen.Text = $"Hello {(function.FindUser(MainForm.LoggedinUsername)).FirstName}, we're happy to see you!"; 
-        //}
+        private void LoggedIn_Load(object sender, EventArgs e)
+        {
+            WelcomeScreen.Text = $"Hello {(Data.DataFunctions.FindUser(Core.CoreFunctions.LoggedinUsername)).FirstName}, we're happy to see you!";
+        }
 
-      
+        private void LogOutButton_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            MainForm mainForm = new MainForm();
+            mainForm.ShowDialog();
+            Core.CoreFunctions.LoggedinUsername = null;
+            this.Close();
+        }
     }
 }

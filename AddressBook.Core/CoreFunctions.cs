@@ -9,14 +9,58 @@ using System.Net.Mail;
 
 namespace AddressBook.Core
 {
-    public class CoreFunctions
+    public static class CoreFunctions
     {
-       
+        public static string LoggedinUsername = null;
+
+        public static bool FieldsFilled(List<string> fields)
+        {
+            foreach (string item in fields)
+            {
+                if (string.IsNullOrWhiteSpace(item)) return false;
+            }
+            return true;
+        }
+
+        public static int Register(List<string> all_fields)
+        {
+            if (FieldsFilled(all_fields) && DataFunctions.IsUnique(all_fields[1], all_fields[5]))
+            {
+                Domain.User user = CreateUser(int.Parse(all_fields[0]), all_fields[1], all_fields[2], all_fields[3], all_fields[4], all_fields[5]);
+                DataFunctions.AddUser(user);
+                return 1;
+            }
+            else if (!FieldsFilled(all_fields))
+            {
+                return 0;
+            }
+            else
+            {
+                return -1;
+            }
+        }
+
+        public static int LogIn(string username, string password)
+        {
+            if (string.IsNullOrWhiteSpace(password) || password == "Password" || string.IsNullOrWhiteSpace(username) || username == "Username")
+            {
+                return -1;
+            }
+            else if (Data.DataFunctions.CheckCredentials(username, password))
+            {
+                return 1;
+            }
+            else
+            {
+                return 0;
+            }
+        }
+
         //This function creates a User object and returns it
-        public static Domain.User CreateUser(string firstname, string lastname, string username, string password, string email)
+        public static Domain.User CreateUser(int ID, string firstname, string lastname, string username, string password, string email)
         {
             Domain.User user = new Domain.User();
-            user.ID = Data.DataFunctions.nextID;
+            user.ID = ID;
             user.FirstName = firstname;
             user.LastName = lastname;
             user.Username = username;

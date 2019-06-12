@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.InputEmailorUsername = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
@@ -42,23 +42,23 @@
             this.button1.TabIndex = 0;
             this.button1.Text = "Send E-mail";
             this.button1.UseVisualStyleBackColor = true;
-            //this.button1.Click += new System.EventHandler(this.SendMail);
+            this.button1.Click += new System.EventHandler(this.SendMail);
             // 
-            // textBox1
+            // InputEmailorUsername
             // 
-            this.textBox1.Location = new System.Drawing.Point(231, 94);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 1;
+            this.InputEmailorUsername.Location = new System.Drawing.Point(231, 94);
+            this.InputEmailorUsername.Name = "InputEmailorUsername";
+            this.InputEmailorUsername.Size = new System.Drawing.Size(100, 20);
+            this.InputEmailorUsername.TabIndex = 1;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(222, 67);
+            this.label1.Location = new System.Drawing.Point(195, 68);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(115, 13);
+            this.label1.Size = new System.Drawing.Size(176, 13);
             this.label1.TabIndex = 2;
-            this.label1.Text = "Please input your email";
+            this.label1.Text = "Please input your email or username";
             // 
             // button2
             // 
@@ -77,9 +77,10 @@
             this.ClientSize = new System.Drawing.Size(584, 412);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.InputEmailorUsername);
             this.Controls.Add(this.button1);
             this.Name = "ForgotPass";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Forgot Password";
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -89,7 +90,7 @@
         #endregion
 
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox InputEmailorUsername;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button button2;
     }

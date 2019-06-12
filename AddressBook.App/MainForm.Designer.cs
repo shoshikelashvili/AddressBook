@@ -63,7 +63,7 @@
             this.Login.TabIndex = 0;
             this.Login.Text = "Login";
             this.Login.UseVisualStyleBackColor = true;
-            //this.Login.Click += new System.EventHandler(this.LogInClick);
+            this.Login.Click += new System.EventHandler(this.LogInClick);
             // 
             // Register
             // 
@@ -98,6 +98,7 @@
             this.Controls.Add(this.UsernameInput);
             this.Name = "MainForm";
             this.RightToLeftLayout = true;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "MainForm";
             this.ResumeLayout(false);
             this.PerformLayout();

@@ -1,21 +1,16 @@
-﻿using AddressBook.Data;
-using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System;
 using System.Windows.Forms;
 
-namespace AddressBook.App {
-    public partial class MainForm : Form {
-        public MainForm() {
+namespace AddressBook.App
+{
+    public partial class MainForm : Form
+    {
+        public MainForm()
+        {
             InitializeComponent();
         }
-        public static string LoggedinUsername = null;
 
+        #region Design code
         // Code for placeholder effect on Username
         public void RemoveUsernameText(object sender, EventArgs e)
         {
@@ -51,6 +46,7 @@ namespace AddressBook.App {
                 PasswordInput.Text = "Password";
             }
         }
+        #endregion
 
         // Code for Register redirect
         public void RegisterRedirect(object sender, EventArgs e)
@@ -61,28 +57,27 @@ namespace AddressBook.App {
             this.Close();
         }
 
-        //public void LogInClick(object sender, EventArgs e)
-        //{
-        //    DataFunctions functions = new DataFunctions();
-        //    if (string.IsNullOrWhiteSpace(PasswordInput.Text) || PasswordInput.Text == "Password" || string.IsNullOrWhiteSpace(UsernameInput.Text) ||UsernameInput.Text == "Username")
-        //    {
-        //        DialogResult result = MessageBox.Show($"Please fill all the fields!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
-        //    }
-        //    else if(functions.CheckCredentials(UsernameInput.Text, PasswordInput.Text))
-        //    {
-        //        DialogResult result = MessageBox.Show($"Log in Succesfull!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-        //        LoggedinUsername = UsernameInput.Text;
-        //        this.Hide();
-        //        LoggedIn loggedInForm = new LoggedIn();
-        //        loggedInForm.ShowDialog();
-        //        this.Close();
-        //    }
-        //    else
-        //    {
-        //        DialogResult result = MessageBox.Show($"User with such username and password doesn't exist!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
-        //    }
-        //}
-         
+        public void LogInClick(object sender, EventArgs e)
+        {
+            switch (Core.CoreFunctions.LogIn(UsernameInput.Text, PasswordInput.Text))
+            {
+                case -1:
+                    MessageBox.Show($"Please fill all the fields!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Warning, MessageBoxDefaultButton.Button2);
+                    break;
+                case 1:
+                    Core.CoreFunctions.LoggedinUsername = UsernameInput.Text;
+                    this.Hide();
+                    LoggedIn loggedInForm = new LoggedIn();
+                    loggedInForm.ShowDialog();
+                    this.Close();
+                    break;
+                case 0:
+                    MessageBox.Show($"User with such username and password doesn't exist!", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button2);
+                    break;
+            }
+        }
+        
+
         public void ForgotPassClick(object sender, EventArgs e)
         {
             this.Hide();
@@ -91,6 +86,6 @@ namespace AddressBook.App {
             this.Close();
         }
 
-         
+
     }
 }

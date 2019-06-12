@@ -27,13 +27,12 @@ namespace AddressBook.App
             this.Close();
         }
 
-        //public void SendMail(object sender, EventArgs e)
-        //{
-        //    DataFunctions function = new DataFunctions();
-        //    User user = function.FindUser(textBox1.Text);
-        //        Core.CoreFunctions.send_Email($"Hello there {user.FirstName + " " + user.LastName}, your username is {user.Username} and your password is {user.Password}", textBox1.Text);
-        //        DialogResult result = MessageBox.Show($"Message sent succesfully! Please check your email", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
-        //}
+        public void SendMail(object sender, EventArgs e)
+        {
+            User user = Data.DataFunctions.FindUser(InputEmailorUsername.Text);
+            Core.CoreFunctions.send_Email($"Hello there {user.FirstName + " " + user.LastName}, your username is {user.Username} and your password is {user.Password}", user.Email );
+            DialogResult result = MessageBox.Show($"Message sent succesfully! Please check your email", "Notice", MessageBoxButtons.OK, MessageBoxIcon.Information, MessageBoxDefaultButton.Button2);
+        }
 
     }
 }
