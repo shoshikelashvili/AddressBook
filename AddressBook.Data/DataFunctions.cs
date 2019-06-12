@@ -13,7 +13,7 @@ namespace AddressBook.Data
         private static string _usersFilePath = @"E:\G02\Users.dat"; //We save all User credentials here
         private static List<User> Users = new List<User>();
 
-        public static int returnUsersLength() { return Users.Count; }
+        public static int returnNextID() { return Users.Count; }
 
         //This functions transfers information from Dat file to users List
         public static void LoadUserData()
@@ -58,7 +58,6 @@ namespace AddressBook.Data
 
         public static void AddUser(User user)
         {
-            if (user.Email == user.Username) throw new Exception("Username and email must be different");
             foreach (User u in Users)
             {
                 if (u.ID == user.ID || u.Username == user.Username || u.Email == user.Email)
@@ -105,12 +104,17 @@ namespace AddressBook.Data
         }
         //This function finds user based on username or email
 
-        public static User FindUser(string usernameORemail)
+        public static User FindUser(string email)
+        {
+            return FindUser(email, "");
+        }
+
+        public static User FindUser(string email, string username)
         {
             LoadUserData();
             foreach (User u in Users)
             {
-                if (u.Email == usernameORemail || u.Username == usernameORemail) return u;
+                if (u.Email == email || u.Username == username) return u;
             }
             throw new Exception("Such user doesn't exist.");
         }

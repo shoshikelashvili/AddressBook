@@ -60,7 +60,7 @@ namespace AddressBook.Core
         public static Domain.User CreateUser(string firstname, string lastname, string username, string password, string email)
         {
             Domain.User user = new Domain.User();
-            user.ID = Data.DataFunctions.returnUsersLength();
+            user.ID = Data.DataFunctions.returnNextID();
             user.FirstName = firstname;
             user.LastName = lastname;
             user.Username = username;
