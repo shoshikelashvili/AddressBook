@@ -31,7 +31,7 @@ namespace AddressBook.App
 
         private void RegisterClick(object sender, EventArgs e)
         {
-            List<string> all_fields = new List<string> { IDtext.Text, FirstNameText.Text, LastNameText.Text, UserNameText.Text, PasswordText.Text, EmailText.Text };
+            List<string> all_fields = new List<string> { FirstNameText.Text, LastNameText.Text, UserNameText.Text, PasswordText.Text, EmailText.Text };
             switch (Core.CoreFunctions.Register(all_fields))
             {
                 case 1:

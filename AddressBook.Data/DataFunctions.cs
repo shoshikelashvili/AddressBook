@@ -13,6 +13,8 @@ namespace AddressBook.Data
         private static string _usersFilePath = @"E:\G02\Users.dat"; //We save all User credentials here
         private static List<User> Users = new List<User>();
 
+        public static int returnUsersLength() { return Users.Count; }
+
         //This functions transfers information from Dat file to users List
         public static void LoadUserData()
         {

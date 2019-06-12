@@ -41,8 +41,6 @@
             this.EmailText = new System.Windows.Forms.TextBox();
             this.GoBack = new System.Windows.Forms.Button();
             this.DebugButton = new System.Windows.Forms.Button();
-            this.IDtext = new System.Windows.Forms.TextBox();
-            this.ID = new System.Windows.Forms.Label();
             this.SuspendLayout();
             // 
             // RegisterButton
@@ -155,29 +153,11 @@
             this.DebugButton.UseVisualStyleBackColor = true;
             this.DebugButton.Click += new System.EventHandler(this.DebugButton_Click);
             // 
-            // IDtext
-            // 
-            this.IDtext.Location = new System.Drawing.Point(225, 13);
-            this.IDtext.Name = "IDtext";
-            this.IDtext.Size = new System.Drawing.Size(100, 20);
-            this.IDtext.TabIndex = 0;
-            // 
-            // ID
-            // 
-            this.ID.AutoSize = true;
-            this.ID.Location = new System.Drawing.Point(179, 16);
-            this.ID.Name = "ID";
-            this.ID.Size = new System.Drawing.Size(18, 13);
-            this.ID.TabIndex = 14;
-            this.ID.Text = "ID";
-            // 
             // RegisterForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(584, 412);
-            this.Controls.Add(this.ID);
-            this.Controls.Add(this.IDtext);
             this.Controls.Add(this.DebugButton);
             this.Controls.Add(this.GoBack);
             this.Controls.Add(this.EmailText);
@@ -214,7 +194,5 @@
         private System.Windows.Forms.TextBox EmailText;
         private System.Windows.Forms.Button GoBack;
         private System.Windows.Forms.Button DebugButton;
-        private System.Windows.Forms.TextBox IDtext;
-        private System.Windows.Forms.Label ID;
     }
 }

@@ -24,9 +24,9 @@ namespace AddressBook.Core
 
         public static int Register(List<string> all_fields)
         {
-            if (FieldsFilled(all_fields) && DataFunctions.IsUnique(all_fields[1], all_fields[5]))
+            if (FieldsFilled(all_fields) && DataFunctions.IsUnique(all_fields[0], all_fields[4]))
             {
-                Domain.User user = CreateUser(int.Parse(all_fields[0]), all_fields[1], all_fields[2], all_fields[3], all_fields[4], all_fields[5]);
+                Domain.User user = CreateUser(all_fields[0], all_fields[1], all_fields[2], all_fields[3], all_fields[4]);
                 DataFunctions.AddUser(user);
                 return 1;
             }
@@ -57,10 +57,10 @@ namespace AddressBook.Core
         }
 
         //This function creates a User object and returns it
-        public static Domain.User CreateUser(int ID, string firstname, string lastname, string username, string password, string email)
+        public static Domain.User CreateUser(string firstname, string lastname, string username, string password, string email)
         {
             Domain.User user = new Domain.User();
-            user.ID = ID;
+            user.ID = Data.DataFunctions.returnUsersLength();
             user.FirstName = firstname;
             user.LastName = lastname;
             user.Username = username;
